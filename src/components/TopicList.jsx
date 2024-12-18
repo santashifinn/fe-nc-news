@@ -4,7 +4,9 @@ const TopicList = ({ topics, loading }) => {
   return (
     <>
       {loading ? (
-        <span className="loader"></span>
+        <div className="center-loader">
+          <span className="loader"></span>
+        </div>
       ) : (
         <div className="topic-list">
           <h2>Topics</h2>

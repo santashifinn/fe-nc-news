@@ -103,6 +103,34 @@ h1 {
   margin-bottom: 20px;
 }
 
+.article-list-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.article-list-card {
+  border: 1px dashed #f45b69ff;
+  border-radius: 8px;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+  width: 20em;
+}
+
+.article-list-card-image {
+  display: flex;
+  justify-content: center;
+}
+
+.article-list-card img {
+  margin-top: 5px;
+  max-width: 19em;
+  border: 1px solid #028090ff;
+  border-radius: 20px;
+}
+
 .page-select-1 {
   text-align: center;
   font-size: 0.8em;
@@ -184,6 +212,10 @@ border-bottom: 1px solid #028090ff;
 margin-bottom: 5px;
 }
 
+.center-loader {
+  text-align: center;
+}
+
 .loader {
   width: 48px;
   height: 48px;
@@ -191,7 +223,7 @@ margin-bottom: 5px;
   display: inline-block;
   position: relative;
   border: 3px solid;
-  border-color: #fff yellow transparent transparent;
+  border-color: #114b5fff #028090ff transparent transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -206,7 +238,7 @@ margin-bottom: 5px;
   bottom: 0;
   margin: auto;
   border: 3px solid;
-  border-color: transparent transparent rgb(255, 98, 0); #ff3d00;
+  border-color: transparent transparent #e4fde1ff #456990ff;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -217,7 +249,7 @@ margin-bottom: 5px;
 .loader::before {
   width: 32px;
   height: 32px;
-  border-color: yellow #fff transparent transparent;
+  border-color: #f45b69ff #e4fde1ff transparent transparent;
   animation: rotation 1.5s linear infinite;
 }
 
