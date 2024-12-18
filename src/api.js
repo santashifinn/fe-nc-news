@@ -48,4 +48,21 @@ const getCommentsbyArticleId = (article_id) => {
     });
 };
 
-export { getArticles, getTopics, getArticlebyId, getCommentsbyArticleId };
+const getVotesCount = (article_id) => {
+  return api.get(`/articles/${article_id}`).then(({ data: { article } }) => {
+    return article.votes;
+  });
+};
+
+const updateArticleVotes = (article_id) => {
+  return api.patch(`/articles/${article_id}`, { inc_votes: 1 });
+};
+
+export {
+  getArticles,
+  getTopics,
+  getArticlebyId,
+  getCommentsbyArticleId,
+  getVotesCount,
+  updateArticleVotes,
+};

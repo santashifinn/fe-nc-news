@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getArticlebyId, getCommentsbyArticleId } from "../app";
+import { getArticlebyId, getCommentsbyArticleId } from "../api";
 import SingleArticleCard from "./SingleArticleCard";
 import Comments from "./Comments";
 
