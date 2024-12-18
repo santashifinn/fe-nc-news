@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getArticles, getTopics } from "../app";
+import { getArticles, getTopics } from "../api";
 import ArticleList from "./ArticleList";
 import ArticleNav from "./ArticleNav";
 

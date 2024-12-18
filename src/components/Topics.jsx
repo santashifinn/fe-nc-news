@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTopics } from "../app";
+import { getTopics } from "../api";
 import TopicList from "./TopicList";
 
 const Topics = ({ topics, setTopics }) => {

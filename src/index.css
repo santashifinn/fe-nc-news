@@ -165,13 +165,6 @@ h1 {
   border-radius: 20px;
 }
 
-.article-text-smol {
-  font-size: 0.8em;
-  background-color: #456990ff;
-  border-radius: 10px;
-  padding: 5px 7px;
-}
-
 .article-text-title {
   font-size: 1em;
   font-weight: 600;
@@ -188,9 +181,22 @@ h1 {
   font-size: 0.9em;
 }
 
+.article-text-smol {
+  font-size: 0.8em;
+  background-color: #456990ff;
+  border-radius: 10px;
+  padding: 5px 7px;
+}
 
-
-
+.article-text-smol button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
 .topic-list {
   display: flex;
@@ -208,8 +214,8 @@ h1 {
 }
 
 .topic-card h3 {
-border-bottom: 1px solid #028090ff;
-margin-bottom: 5px;
+  border-bottom: 1px solid #028090ff;
+  margin-bottom: 5px;
 }
 
 .center-loader {

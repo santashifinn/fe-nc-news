@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 import { prettyTimestamp } from "../utilities";
+import Votes from "./Votes";
 
 const SingleArticleCard = ({ article, loading }) => {
   return (
@@ -39,7 +40,7 @@ const SingleArticleCard = ({ article, loading }) => {
               💬 {article.comment_count}
             </span>
           </Link>{" "}
-          <span className="article-text-smol">❤︎ {article.votes}</span>
+          <Votes />
         </div>
       )}
     </>
