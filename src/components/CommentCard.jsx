@@ -7,7 +7,7 @@ const CommentCard = ({ comment }) => {
         <span className="article-text-smol">
           {prettyTimestamp(comment.created_at)}
         </span>
-        <br />
+        {" "}
 
         <span className="article-text-author">〜{comment.author}</span>
         <br />
