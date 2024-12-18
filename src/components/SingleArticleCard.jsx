@@ -1,17 +1,27 @@
 import { Link } from "react-router";
 
-const SingleArticleCard = ({article}) => {
+import { prettyTimestamp } from "../utilities";
+
+const SingleArticleCard = ({ article, loading }) => {
   return (
     <>
-      <div className="article-card">
-        <p>
-          <span className="article-text-smol">/{article.topic}</span>{" "}
+      {loading ? (
+        <div className="center-loader">
+          <span className="loader"></span>
+        </div>
+      ) : (
+        <div className="article-card">
           <span className="article-text-smol">
-            {article.created_at /* .split("T")[0] */}
-          </span>
+            {"/"}
+            {article.topic}
+          </span>{" "}
+          <span className="article-text-smol">{article.created_at}</span>
           <br />
           <span className="article-text-title">{article.title}</span>
-          <span className="article-text-author">〜{article.author}</span>
+          <span className="article-text-author">
+            {"〜"}
+            {article.author}
+          </span>
           <br />
           <span className="article-card-image">
             <img src={article.article_img_url} alt="description here" />
@@ -30,8 +40,8 @@ const SingleArticleCard = ({article}) => {
             </span>
           </Link>{" "}
           <span className="article-text-smol">❤︎ {article.votes}</span>
-        </p>
-      </div>
+        </div>
+      )}
     </>
   );
 };

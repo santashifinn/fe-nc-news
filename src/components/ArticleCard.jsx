@@ -1,15 +1,17 @@
 import { Link } from "react-router";
 
+import { prettyTimestamp } from "../utilities";
+
 const ArticleCard = ({ article }) => {
   return (
     <>
-      <div className="article-card">
+      <div className="article-list-card">
         <p>
           <Link to={`/articles?topic=${article.topic}`}>
             <span className="article-text-smol">/{article.topic}</span>
           </Link>{" "}
           <span className="article-text-smol">
-            {article.created_at.split("T")[0]}
+            {prettyTimestamp(article.created_at)}
           </span>
           <br />
           <Link to={`/articles/${article.article_id}`}>
@@ -20,7 +22,7 @@ const ArticleCard = ({ article }) => {
           </Link>
           <br />
           <Link to={`/articles/${article.article_id}`}>
-            <span className="article-card-image">
+            <span className="article-list-card-image">
               <img src={article.article_img_url} alt="description here" />
             </span>
           </Link>

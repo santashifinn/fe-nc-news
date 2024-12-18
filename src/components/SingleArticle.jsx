@@ -21,13 +21,13 @@ const SingleArticle = () => {
       setComments(fetchedComments);
       setLoading(false);
     });
-  }, [article_id]);
+  }, []);
 
   return (
     <>
-      <SingleArticleCard article={article} />
+      <SingleArticleCard article={article} loading={loading} />
 
-      <Comments comments={comments} />
+      <Comments comments={comments} loading={loading} />
     </>
   );
 };
