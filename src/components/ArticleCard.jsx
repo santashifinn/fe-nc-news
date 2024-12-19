@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 
+import ArticleListVotes from "./ArticleListVotes";
+
 import { prettyTimestamp } from "../utilities";
 
 const ArticleCard = ({ article }) => {
@@ -16,8 +18,8 @@ const ArticleCard = ({ article }) => {
         <Link to={`/articles/${article.article_id}`}>
           <span className="article-text-title">{article.title}</span>
         </Link>
-        <Link to={`/users/${article.author}`}>
-          <span className="article-text-author">〜{article.author}</span>
+        <Link to={`/users/`}>
+          <span className="article-text-author">↪ {article.author}</span>
         </Link>
         <br />
         <Link to={`/articles/${article.article_id}`}>
@@ -34,7 +36,7 @@ const ArticleCard = ({ article }) => {
         >
           <span className="article-text-smol">💬 {article.comment_count}</span>
         </Link>{" "}
-        <span className="article-text-smol">❤︎ {article.votes}</span>
+        <ArticleListVotes article={article} />
       </div>
     </>
   );

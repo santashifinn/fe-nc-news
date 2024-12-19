@@ -10,9 +10,11 @@ const TopicList = ({ topics, loading }) => {
       ) : (
         <div className="topic-list">
           <h2>Topics</h2>
-          {topics.map((topic, index) => {
-            return <TopicCard key={index} topic={topic} />;
-          })}
+          <div className="user-list-display">
+            {topics.map((topic, index) => {
+              return <TopicCard key={index} topic={topic} />;
+            })}
+          </div>
         </div>
       )}
     </>

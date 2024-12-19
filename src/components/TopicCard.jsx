@@ -1,10 +1,19 @@
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 
 const TopicCard = ({ topic }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const topicQuery = searchParams.get("topic");
+
   return (
     <>
       <div className="topic-card">
-        <Link to={`/articles?topic=${topic.slug}`}>
+        <Link
+          to={{
+            pathname: "/articles",
+            search: `?topic=${topic.slug}`,
+          }}
+        >
           <h3>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</h3>
         </Link>
 
