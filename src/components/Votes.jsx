@@ -31,7 +31,7 @@ const Votes = () => {
   return (
     <span className="article-text-smol">
       <button onClick={handleVote}>
-        ❤︎ {error ? { error } : null}
+        ❤︎ {error ? error : null}
         {votesCount}
       </button>
     </span>

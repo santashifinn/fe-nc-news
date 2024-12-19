@@ -1,29 +1,33 @@
-import { useSearchParams } from "react-router";
+import { useSearchParams, useLocation } from "react-router";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const ArticleNav = ({ topics }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   // const [searchQuery, setSearchQuery] = useState(searchParams.get())
 
-  // const topicQuery = searchParams.get("topic");
-  // const sortByQuery = searchParams.get("sort_by");
-  // const orderQuery = searchParams.get("order");
-  // const limitQuery = searchParams.get("limit");
-  // const pageQuery = searchParams.get("p");
+  const topicQuery = searchParams.get("topic");
+  const sortByQuery = searchParams.get("sort_by");
+  const orderQuery = searchParams.get("order");
+  const limitQuery = searchParams.get("limit");
+  const pageQuery = searchParams.get("p");
 
 
-  const setSortOrder = (direction) => {
-    const newParams = new URLSearchParams(searchParams);
-    if (direction === 0) {
-      newParams.set("order", "desc");
-      setSearchParams(newParams);
-    }
-    if (direction === 1) {
-      newParams.set("order", "asc");
-      setSearchParams(newParams);
-    }
-  }
+
+  // const setSortOrder = (direction) => {
+  //   const newParams = new URLSearchParams(searchParams);
+  //   if (direction === 0) {
+  //     newParams.set("order", "desc");
+  //     setSearchParams(newParams);
+  //   }
+  //   if (direction === 1) {
+  //     newParams.set("order", "asc");
+  //     setSearchParams(newParams);
+  //   }
+  // }
+
+  <Link to={{ pathname: "/my-route", search: "?myParam=myValue" }}></Link>;
 
   // useEffect(() => {
   //   // fetch new data based on the queries
