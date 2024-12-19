@@ -1,6 +1,6 @@
-import { useSearchParams, useLocation } from "react-router";
+import { useSearchParams, useLocation, Link } from "react-router";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { getArticles } from "../api";
 
 const ArticleNav = ({ topics }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,31 +15,31 @@ const ArticleNav = ({ topics }) => {
 
 
 
-  // const setSortOrder = (direction) => {
-  //   const newParams = new URLSearchParams(searchParams);
-  //   if (direction === 0) {
-  //     newParams.set("order", "desc");
-  //     setSearchParams(newParams);
-  //   }
-  //   if (direction === 1) {
-  //     newParams.set("order", "asc");
-  //     setSearchParams(newParams);
-  //   }
-  // }
+  const setSortOrder = (direction) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (direction === 0) {
+      newParams.set("order", "desc");
+      setSearchParams(newParams);
+    }
+    if (direction === 1) {
+      newParams.set("order", "asc");
+      setSearchParams(newParams);
+    }
+  }
 
   <Link to={{ pathname: "/my-route", search: "?myParam=myValue" }}></Link>;
 
-  // useEffect(() => {
-  //   // fetch new data based on the queries
-  // }, [topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery]);
+  useEffect(() => {
+    getArticles(topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery);
+  }, [topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery]);
 
-  // const [selectedTopic, setSelectedTopic] = useState([]);
+  const [selectedTopic, setSelectedTopic] = useState([]);
 
-  // const handleChange = (event) => {
-  //   const chosenParam = event.target.name;
-  //   const chosenValue = event.target.value;
-  //   setSearchParams({ [chosenParam]: chosenValue });
-  // };
+  const handleChange = (event) => {
+    const chosenParam = event.target.name;
+    const chosenValue = event.target.value;
+    setSearchParams({ [chosenParam]: chosenValue });
+  };
 
   return (
     <nav className="article-nav">

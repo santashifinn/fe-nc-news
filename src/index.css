@@ -265,10 +265,33 @@ h1 {
   border: 1px solid #f45b69ff;
 }
 
+.article-text-smol-delete {
+  font-size: 0.8em;
+  background-color: #f45b69ff;
+  border-radius: 10px;
+  padding: 5px 7px;
+}
+
+.article-text-smol-delete button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .topic-list {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+.topic-list-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .topic-card {
@@ -278,7 +301,7 @@ h1 {
   text-align: left;
   padding: 10px;
   margin: 10px;
-  max-width: 20em;
+  width: 20em;
 }
 
 .topic-card h3 {

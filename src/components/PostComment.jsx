@@ -18,22 +18,26 @@ const PostComment = ({ comments, setComments }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setComments({ ...newComment});
-    postComment(newComment, article_id).catch((err) => {
-      setError(
-        <span className="article-text-smol">
-          Post failed! Please try again!
-        </span>
-      );
-    });
+
+    postComment(newComment, article_id)
+      // .then((newComment) => {
+      //   setComments((comments) => [newComment, ...comments]);
+      // })
+      .catch((err) => {
+        setError(
+          <span className="article-text-smol">
+            Post failed! Please try again!
+          </span>
+        );
+      });
 
     setNewComment({
       username: "",
       body: "",
     });
-    setTimeout(() => {
-      redirect(`/articles/${article_id}`);
-    }, 1000);
+    // setTimeout(() => {
+    //   redirect(`/articles/${article_id}`);
+    // }, 1000);
   };
 
   const handleReset = () => {

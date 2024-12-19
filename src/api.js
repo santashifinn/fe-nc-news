@@ -7,25 +7,35 @@ const api = axios.create({
 const getArticles = (topic, sort_by, order, limit, p) => {
   let url = `/articles`;
 
-  if (topic) {
-    url += `&topic=${topic}`;
-  }
-  if (sort_by) {
-    url += `&sort_by=${sort_by}`;
-  }
-  if (order) {
-    url += `&order=${order}`;
-  }
-  if (limit) {
-    url += `&limit=${limit}`;
-  }
-  if (p) {
-    url += `&p=${p}`;
-  }
+  // if (topic) {
+  //   url += `&topic=${topic}`;
+  // }
+  // if (sort_by) {
+  //   url += `&sort_by=${sort_by}`;
+  // }
+  // if (order) {
+  //   url += `&order=${order}`;
+  // }
+  // if (limit) {
+  //   url += `&limit=${limit}`;
+  // }
+  // if (p) {
+  //   url += `&p=${p}`;
+  // }
 
-  return api.get(url).then(({ data: { articles } }) => {
-    return articles;
-  });
+  return api
+    .get(url, {
+      params: {
+        topic: topic,
+        sort_by: sort_by,
+        order: order,
+        limit: limit,
+        p: p,
+      },
+    })
+    .then(({ data: { articles } }) => {
+      return articles;
+    });
 };
 
 const getTopics = () => {
@@ -64,8 +74,16 @@ const updateArticleVotes = (article_id) => {
   return api.patch(`/articles/${article_id}`, { inc_votes: 1 });
 };
 
+const updateCommentVotes = (comment_id) => {
+  return api.patch(`/comments/${comment_id}`, { inc_votes: 1 });
+};
+
 const postComment = (newComment, article_id) => {
   return api.post(`/articles/${article_id}/comments`, newComment);
+};
+
+const deleteComment = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`);
 };
 
 export {
@@ -76,5 +94,7 @@ export {
   getCommentsbyArticleId,
   getVotesCount,
   updateArticleVotes,
+  updateCommentVotes,
   postComment,
+  deleteComment,
 };

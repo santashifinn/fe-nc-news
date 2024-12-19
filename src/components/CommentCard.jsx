@@ -1,4 +1,7 @@
 import { prettyTimestamp } from "../utilities";
+import { Link } from "react-router";
+import CommentVotes from "./CommentVotes";
+import CommentDelete from "./CommentDelete";
 
 const CommentCard = ({ comment }) => {
   return (
@@ -6,17 +9,15 @@ const CommentCard = ({ comment }) => {
       <div className="article-card">
         <span className="article-text-smol">
           {prettyTimestamp(comment.created_at)}
-        </span>
-        {" "}
-
-        <span className="article-text-author">〜{comment.author}</span>
+        </span>{" "}
+        <Link to={"/users"}>
+          <span className="article-text-author">↪ {comment.author}</span>
+        </Link>
         <br />
-
         <br />
         <div className="article-text-body">{comment.body}</div>
         <br />
-
-        <span className="article-text-smol">❤︎ {comment.votes}</span>
+        <CommentVotes comment={comment} /> <CommentDelete comment={comment} />
       </div>
     </>
   );

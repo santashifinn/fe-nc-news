@@ -20,7 +20,7 @@ const SingleArticleCard = ({ article, loading }) => {
           <br />
           <span className="article-text-title">{article.title}</span>
           <span className="article-text-author">
-            {"〜"}
+            {"↪ "}
             {article.author}
           </span>
           <br />
@@ -40,7 +40,7 @@ const SingleArticleCard = ({ article, loading }) => {
               💬 {article.comment_count}
             </span>
           </Link>{" "}
-          <Votes />
+          <Votes article={article} />
         </div>
       )}
     </>
