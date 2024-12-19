@@ -27,7 +27,11 @@ const SingleArticle = () => {
     <>
       <SingleArticleCard article={article} loading={loading} />
 
-      <Comments comments={comments} loading={loading} />
+      <Comments
+        comments={comments}
+        setComments={setComments}
+        loading={loading}
+      />
     </>
   );
 };

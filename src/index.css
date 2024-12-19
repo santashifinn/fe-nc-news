@@ -29,9 +29,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* display: flex; */
-/* place-items: center; */
-
 .header {
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -111,6 +108,7 @@ h1 {
 }
 
 .article-list-card {
+  background-color: rgb(15, 65, 82);
   border: 1px dashed #f45b69ff;
   border-radius: 8px;
   text-align: left;
@@ -144,6 +142,7 @@ h1 {
 }
 
 .article-card {
+  background-color: rgb(15, 65, 82);
   border: 1px dashed #f45b69ff;
   border-radius: 8px;
   text-align: left;
@@ -198,6 +197,74 @@ h1 {
   outline: inherit;
 }
 
+#comment-add {
+  background-color: #028090ff;
+  border: 1px dashed #e4fde1ff;
+  border-radius: 8px;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+}
+
+#comment-add h3 {
+  margin-bottom: 20px;
+  border-bottom: 3px dashed #e4fde1ff;
+}
+
+#comment-form label {
+  text-align: left;
+}
+
+#comment-form input[type="text"] {
+  font-size: 1em;
+  padding: 10px;
+  margin: 8px 0;
+  width: 20em;
+  box-sizing: border-box;
+  border: 1px solid #114b5fff;
+  border-radius: 10px;
+  background-color: #e4fde1ff;
+  color: #114b5fff;
+}
+
+#comment-form input[type="text"]:focus {
+  border: 1px dashed #f45b69ff;
+}
+
+#comment-form textarea {
+  font-size: 1em;
+  padding: 10px;
+  margin: 8px 0;
+  width: 100%;
+  height: 5em;
+  box-sizing: border-box;
+  border: 1px solid #114b5fff;
+  border-radius: 10px;
+  background-color: #e4fde1ff;
+  color: #114b5fff;
+  resize: none;
+}
+
+#comment-form textarea:focus {
+  border: 1px dashed #f45b69ff;
+}
+
+#comment-form button {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: inherit;
+  background-color: #456990ff;
+  border: 1px solid #114b5fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#comment-form button:hover,
+#comment-form button:focus {
+  border: 1px solid #f45b69ff;
+}
+
 .topic-list {
   display: flex;
   flex-direction: column;
@@ -205,6 +272,7 @@ h1 {
 }
 
 .topic-card {
+  background-color: #028090ff;
   border: 1px dashed #f45b69ff;
   border-radius: 8px;
   text-align: left;
@@ -214,8 +282,70 @@ h1 {
 }
 
 .topic-card h3 {
-  border-bottom: 1px solid #028090ff;
+  border-bottom: 1px solid #e4fde1ff;
   margin-bottom: 5px;
+}
+
+.user-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.user-list-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.user-card {
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  background-color: rgb(15, 65, 82);
+  border: 1px dashed #f45b69ff;
+  border-radius: 8px;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+  width: 30em;
+  height: 10em;
+}
+
+.user-card-text {
+  border-right: 1px dashed #e4fde1ff;
+  padding-top: 5px;
+}
+
+.user-card-text h2 {
+  color: rgb(15, 65, 82);
+  background-color: #f45b69ff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+
+.user-card-text p {
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.user-card-image {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.user-card img {
+  margin-top: 5px;
+  max-width: 100%;
+  max-height: 8em;
+  border: 1px solid transparent;
+  border-radius: 20px;
 }
 
 .center-loader {
