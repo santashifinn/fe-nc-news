@@ -12,17 +12,21 @@ const SingleArticleCard = ({ article, loading }) => {
         </div>
       ) : (
         <div className="article-card">
-          <span className="article-text-smol">
-            {"/"}
-            {article.topic}
-          </span>{" "}
+          <Link to={`/articles?topic=${article.topic}`}>
+            <span className="article-text-smol">
+              {"/"}
+              {article.topic}
+            </span>
+          </Link>{" "}
           <span className="article-text-smol">{article.created_at}</span>
           <br />
           <span className="article-text-title">{article.title}</span>
-          <span className="article-text-author">
-            {"↪ "}
-            {article.author}
-          </span>
+          <Link to={"/users"}>
+            <span className="article-text-author">
+              {"↪ "}
+              {article.author}
+            </span>
+          </Link>
           <br />
           <span className="article-card-image">
             <img src={article.article_img_url} alt="description here" />

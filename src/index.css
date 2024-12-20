@@ -167,8 +167,11 @@ h1 {
 .article-text-title {
   font-size: 1em;
   font-weight: 600;
+  margin: 5px;
+}
+
+#article-list-card-spacer {
   line-height: 2.4;
-  margin: 10px;
 }
 
 .article-text-author {
@@ -197,7 +200,8 @@ h1 {
   outline: inherit;
 }
 
-#comment-add {
+.comment-topic-add {
+  position: relative;
   background-color: #028090ff;
   border: 1px dashed #e4fde1ff;
   border-radius: 8px;
@@ -206,16 +210,16 @@ h1 {
   margin: 10px;
 }
 
-#comment-add h3 {
+.comment-topic-add h3 {
   margin-bottom: 20px;
   border-bottom: 3px dashed #e4fde1ff;
 }
 
-#comment-form label {
+.comment-topic-form label {
   text-align: left;
 }
 
-#comment-form input[type="text"] {
+.comment-topic-form input[type="text"] {
   font-size: 1em;
   padding: 10px;
   margin: 8px 0;
@@ -227,11 +231,11 @@ h1 {
   color: #114b5fff;
 }
 
-#comment-form input[type="text"]:focus {
+.comment-topic-form input[type="text"]:focus {
   border: 1px dashed #f45b69ff;
 }
 
-#comment-form textarea {
+.comment-topic-form textarea {
   font-size: 1em;
   padding: 10px;
   margin: 8px 0;
@@ -245,11 +249,35 @@ h1 {
   resize: none;
 }
 
-#comment-form textarea:focus {
+.comment-topic-form textarea:focus {
   border: 1px dashed #f45b69ff;
 }
 
-#comment-form button {
+
+
+.comment-topic-form select {
+  color: #114b5fff;
+  background-color: #e4fde1ff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  font-size: 1em;
+  margin: 8px 0;
+  height: 2.4em;
+  width: 10em;
+  box-sizing: border-box;
+  border: 1px solid #114b5fff;
+  border-radius: 10px;
+}
+
+.comment-topic-form select:focus {
+  outline: 4px auto #e4fde1ff;
+}
+
+
+
+
+
+.comment-topic-form button {
   font-size: 1.3em;
   font-weight: 600;
   color: inherit;
@@ -260,8 +288,8 @@ h1 {
   cursor: pointer;
 }
 
-#comment-form button:hover,
-#comment-form button:focus {
+.comment-topic-form button:hover,
+.comment-topic-form button:focus {
   border: 1px solid #f45b69ff;
 }
 
@@ -307,6 +335,46 @@ h1 {
 .topic-card h3 {
   border-bottom: 1px solid #e4fde1ff;
   margin-bottom: 5px;
+}
+
+#add-topic {
+  display: flex;
+  justify-content: center;
+}
+
+#add-topic-button {
+  color: #e4fde1ff;
+  background-color: rgb(15, 65, 82);
+  font-size: 1.2em;
+  font-weight: 600;
+  border: 2px solid #e4fde1ff;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  width: 20rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+#add-topic button:hover {
+  border-color: #f45b69ff;
+}
+
+#add-topic button:focus {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.x-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  color: #e4fde1ff;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .user-list {

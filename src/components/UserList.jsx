@@ -9,6 +9,7 @@ const UserList = ({ users, loading }) => {
         </div>
       ) : (
         <section className="user-list">
+          <h2>Users</h2>
           {loading ? (
             <span className="loader"></span>
           ) : (
