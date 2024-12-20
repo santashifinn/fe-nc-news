@@ -23,6 +23,22 @@ const ArticleNav = ({ topics, setArticles }) => {
     }
   };
 
+  const setLimit = (limit) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (limit === 0) {
+      newParams.set("limit", "10");
+      setSearchParams(newParams);
+    }
+    if (limit === 1) {
+      newParams.set("limit", "20");
+      setSearchParams(newParams);
+    }
+    if (limit === 2) {
+      newParams.set("limit", "30");
+      setSearchParams(newParams);
+    }
+  };
+
   <Link to={{ pathname: "/my-route", search: "?myParam=myValue" }}></Link>;
 
   useEffect(() => {
@@ -98,7 +114,7 @@ const ArticleNav = ({ topics, setArticles }) => {
         id="drop-limit"
         name="limit"
         onChange={(event) => {
-          handleChange(event);
+          setLimit(event.target.selectedIndex);
         }}
       >
         <option value="10">10</option>
