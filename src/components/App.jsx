@@ -25,7 +25,7 @@ function App() {
     },
     {
       path: "/add",
-      element: <PostArticle />,
+      element: <PostArticle topics={topics} />,
     },
     {
       path: "/users",

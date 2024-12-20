@@ -49,11 +49,11 @@ const PostComment = ({ comments, setComments }) => {
 
   return (
     <>
-      <section id="comment-add">
-        <h3>Add ᯓ★</h3>
+      <section className="comment-topic-add">
+        <h3>Add Comment ᯓ★</h3>
 
-        <form id="comment-form" onSubmit={handleSubmit}>
-          <label htmlFor="">Username: </label>
+        <form className="comment-topic-form" onSubmit={handleSubmit}>
+          <label htmlFor="comment-username">Username: </label>
           <br />
           <input
             type="text"
@@ -62,9 +62,10 @@ const PostComment = ({ comments, setComments }) => {
             required
             onChange={handleChange}
             value={newComment.username}
+            placeholder="batty-mcbatface"
           ></input>
           <br />
-          <label htmlFor="">Comment: </label>
+          <label htmlFor="comment-body">Comment: </label>
           <br />
           <textarea
             id="comment-body"
@@ -72,6 +73,7 @@ const PostComment = ({ comments, setComments }) => {
             required
             onChange={handleChange}
             value={newComment.body}
+            placeholder="I think bats would really be into this."
           ></textarea>
           <br />
           <button type="submit">SUBMIT</button>{" "}

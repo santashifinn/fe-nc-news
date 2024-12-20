@@ -14,6 +14,7 @@ const ArticleCard = ({ article }) => {
         <span className="article-text-smol">
           {prettyTimestamp(article.created_at)}
         </span>
+        <span id="article-list-card-spacer"> </span>
         <br />
         <Link to={`/articles/${article.article_id}`}>
           <span className="article-text-title">{article.title}</span>

@@ -15,7 +15,7 @@ const Topics = ({ topics, setTopics }) => {
 
   return (
     <>
-      <TopicList topics={topics} loading={loading} />
+      <TopicList topics={topics} setTopics={setTopics} loading={loading} />
     </>
   );
 };

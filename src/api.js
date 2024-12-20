@@ -86,6 +86,14 @@ const deleteComment = (comment_id) => {
   return api.delete(`/comments/${comment_id}`);
 };
 
+const postTopic = (newTopic) => {
+  return api.post(`/topics`, newTopic);
+};
+
+const postArticle = (newArticle) => {
+  return api.post(`/articles`, newArticle);
+};
+
 export {
   getArticles,
   getTopics,
@@ -96,5 +104,7 @@ export {
   updateArticleVotes,
   updateCommentVotes,
   postComment,
+  postTopic,
+  postArticle,
   deleteComment,
 };
