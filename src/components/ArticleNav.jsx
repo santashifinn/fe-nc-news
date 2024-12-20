@@ -68,7 +68,7 @@ const ArticleNav = ({ topics, setArticles }) => {
         }}
       >
         <option key={0} value="">
-          All
+          All topics
         </option>
         {topics.map((topic, index) => {
           return (
