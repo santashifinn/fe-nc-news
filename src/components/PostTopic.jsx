@@ -16,9 +16,9 @@ const PostTopic = ({ topics, setTopics, setTopicFormHidden }) => {
     event.preventDefault();
 
     postTopic(newTopic)
-      //   .then((newTopic) => {
-      //     setTopics((topics) => [newTopic, ...topics]);
-      //   })
+      .then((newTopic) => {
+        setTopics((topics) => [newTopic, ...topics]);
+      })
       .catch((err) => {
         setError(
           <span className="article-text-smol">
@@ -30,6 +30,7 @@ const PostTopic = ({ topics, setTopics, setTopicFormHidden }) => {
       slug: "",
       description: "",
     });
+    setTopicFormHidden(true);
   };
 
   const handleReset = () => {

@@ -47,19 +47,6 @@ function App() {
       <Header />
       <Nav />
       {element}
-      {/* <Routes>
-        <Route
-          path="/"
-          element={<Articles topics={topics} setTopics={setTopics} />}
-        />
-        <Route
-          path="/topics"
-          element={<Topics topics={topics} setTopics={setTopics} />}
-        />
-        <Route path="/add" element={<PostArticle />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/articles/:article_id" element={<SingleArticle />} />
-      </Routes> */}
       <Footer />
     </>
   );
