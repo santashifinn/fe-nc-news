@@ -24,7 +24,7 @@ const getArticles = (topic, sort_by, order, limit, p) => {
   // }
 
   return api
-    .get(url, {
+    .get("/articles", {
       params: {
         topic: topic,
         sort_by: sort_by,
@@ -34,6 +34,7 @@ const getArticles = (topic, sort_by, order, limit, p) => {
       },
     })
     .then(({ data: { articles } }) => {
+      console.dir(articles)
       return articles;
     });
 };
@@ -79,7 +80,9 @@ const updateCommentVotes = (comment_id) => {
 };
 
 const postComment = (newComment, article_id) => {
-  return api.post(`/articles/${article_id}/comments`, newComment);
+  return api
+    .post(`/articles/${article_id}/comments`, newComment)
+    .then(({ data: { comment } }) => comment);
 };
 
 const deleteComment = (comment_id) => {
