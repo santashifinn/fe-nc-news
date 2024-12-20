@@ -17,11 +17,10 @@
   .nav-main button {
     color: rgb(15, 65, 82);
     background-color: #f45b69ff;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
     border: 2px solid transparent;
     border-radius: 8px;
-    padding: 10px;
     margin: 5px;
     width: fit-content;
     cursor: pointer;
