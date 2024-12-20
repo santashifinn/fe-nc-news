@@ -14,7 +14,14 @@ const Comments = ({ comments, setComments, loading }) => {
           <h2 id="comments-here">Comments ⊹˖𓂃 ࣪ ִֶָ🦇་༘࿐</h2>
           <PostComment comments={comments} setComments={setComments} />
           {comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
+            return (
+              <CommentCard
+                key={comment.comment_id}
+                comment={comment}
+                comments={comments}
+                setComments={setComments}
+              />
+            );
           })}
         </div>
       )}
