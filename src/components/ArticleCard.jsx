@@ -9,7 +9,7 @@ const ArticleCard = ({ article }) => {
     <>
       <div className="article-list-card">
         <Link to={`/articles?topic=${article.topic}`}>
-          <span className="article-text-smol">/{article.topic}</span>
+          <span className="article-text-smol">/{article.topic.toLowerCase()}</span>
         </Link>{" "}
         <span className="article-text-smol">
           {prettyTimestamp(article.created_at)}

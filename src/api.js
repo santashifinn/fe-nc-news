@@ -5,24 +5,6 @@ const api = axios.create({
 });
 
 const getArticles = (topic, sort_by, order, limit, p) => {
-  let url = `/articles`;
-
-  // if (topic) {
-  //   url += `&topic=${topic}`;
-  // }
-  // if (sort_by) {
-  //   url += `&sort_by=${sort_by}`;
-  // }
-  // if (order) {
-  //   url += `&order=${order}`;
-  // }
-  // if (limit) {
-  //   url += `&limit=${limit}`;
-  // }
-  // if (p) {
-  //   url += `&p=${p}`;
-  // }
-
   return api
     .get("/articles", {
       params: {
@@ -34,7 +16,7 @@ const getArticles = (topic, sort_by, order, limit, p) => {
       },
     })
     .then(({ data: { articles } }) => {
-      console.dir(articles)
+      console.dir(articles);
       return articles;
     });
 };
@@ -90,11 +72,13 @@ const deleteComment = (comment_id) => {
 };
 
 const postTopic = (newTopic) => {
-  return api.post(`/topics`, newTopic);
+  return api.post(`/topics`, newTopic).then(({ data: { topic } }) => topic);
 };
 
 const postArticle = (newArticle) => {
-  return api.post(`/articles`, newArticle);
+  return api
+    .post(`/articles`, newArticle)
+    .then(({ data: { article } }) => article);
 };
 
 export {

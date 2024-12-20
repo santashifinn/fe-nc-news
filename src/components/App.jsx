@@ -9,6 +9,7 @@ import Topics from "./Topics";
 import SingleArticle from "./SingleArticle";
 import PostArticle from "./PostArticle";
 import Users from "./Users";
+import ErrorNotFound from "./ErrorNotFound";
 
 function App() {
   const [topics, setTopics] = useState([]);
@@ -35,6 +36,10 @@ function App() {
       path: "/articles/:article_id",
       element: <SingleArticle />,
     },
+    {
+      path: "*",
+      element: <ErrorNotFound />,
+    },
   ]);
 
   return (
@@ -42,19 +47,6 @@ function App() {
       <Header />
       <Nav />
       {element}
-      {/* <Routes>
-        <Route
-          path="/"
-          element={<Articles topics={topics} setTopics={setTopics} />}
-        />
-        <Route
-          path="/topics"
-          element={<Topics topics={topics} setTopics={setTopics} />}
-        />
-        <Route path="/add" element={<PostArticle />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/articles/:article_id" element={<SingleArticle />} />
-      </Routes> */}
       <Footer />
     </>
   );
