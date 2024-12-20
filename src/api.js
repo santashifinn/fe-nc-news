@@ -81,6 +81,16 @@ const postArticle = (newArticle) => {
     .then(({ data: { article } }) => article);
 };
 
+// api.interceptors.response.use(
+//   (response) => response,
+//   (err) => {
+//     if (err.response && err.response.status === 404) {
+//       console.log("hi")
+//     }
+//     return Promise.reject(err);
+//   }
+// );
+
 export {
   getArticles,
   getTopics,
