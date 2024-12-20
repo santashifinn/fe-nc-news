@@ -9,6 +9,7 @@ import Topics from "./Topics";
 import SingleArticle from "./SingleArticle";
 import PostArticle from "./PostArticle";
 import Users from "./Users";
+import ErrorNotFound from "./ErrorNotFound";
 
 function App() {
   const [topics, setTopics] = useState([]);
@@ -34,6 +35,10 @@ function App() {
     {
       path: "/articles/:article_id",
       element: <SingleArticle />,
+    },
+    {
+      path: "*",
+      element: <ErrorNotFound />,
     },
   ]);
 
