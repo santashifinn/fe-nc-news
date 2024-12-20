@@ -6,54 +6,60 @@
 
 @media only screen and (max-width: 600px) {
   .nav-main {
-  display: flex;
-  justify-content: space-around;
-  max-width: 100%;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: 3px dashed #028090ff;
-}
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px dashed #028090ff;
+  }
 
-.nav-main button {
-  color: rgb(15, 65, 82);
-  background-color: #f45b69ff;
-  font-size: 1em;
-  font-weight: 600;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 4px;
-  margin: 5px;
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
+  .nav-main button {
+    color: rgb(15, 65, 82);
+    background-color: #f45b69ff;
+    font-size: 1.2em;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    width: fit-content;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
 
-.nav-main button:hover {
-  border-color: #e4fde1ff;
-}
+  .nav-main button:hover {
+    border-color: #e4fde1ff;
+  }
 
-.nav-main button:focus {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  .nav-main button:focus {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 
-.article-nav {
-  display: flex;
-  justify-content: space-around;
-  font-size: 0.6em;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: 3px dashed #028090ff;
-}
+  .article-nav {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.6em;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px dashed #028090ff;
+  }
 
-.article-nav select {
-  color: rgb(15, 65, 82);
-  background-color: #f45b69ff;
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
+  .article-nav label {
+    display: none;
+  }
 
-.article-nav select:focus {
-  outline: 4px auto #e4fde1ff;
-}
+  .article-nav select {
+    color: rgb(15, 65, 82);
+    background-color: #f45b69ff;
+    cursor: pointer;
+    width: fit-content;
+    transition: border-color 0.3s;
+  }
+
+  .article-nav select:focus {
+    outline: 4px auto #e4fde1ff;
+  }
 }
 
 body {
@@ -305,8 +311,6 @@ h1 {
   border: 1px dashed #f45b69ff;
 }
 
-
-
 .comment-topic-form select {
   color: #114b5fff;
   background-color: #e4fde1ff;
@@ -324,10 +328,6 @@ h1 {
 .comment-topic-form select:focus {
   outline: 4px auto #e4fde1ff;
 }
-
-
-
-
 
 .comment-topic-form button {
   font-size: 1.3em;
