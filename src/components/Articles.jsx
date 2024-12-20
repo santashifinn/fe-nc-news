@@ -22,7 +22,7 @@ const Articles = ({ topics, setTopics }) => {
 
   return (
     <div>
-      <ArticleNav topics={topics} />
+      <ArticleNav topics={topics} setArticles={setArticles} />
       <ArticleList articles={articles} loading={loading} />
     </div>
   );

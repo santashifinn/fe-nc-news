@@ -20,9 +20,9 @@ const PostComment = ({ comments, setComments }) => {
     event.preventDefault();
 
     postComment(newComment, article_id)
-      // .then((newComment) => {
-      //   setComments((comments) => [newComment, ...comments]);
-      // })
+      .then((newComment) => {
+        setComments((comments) => [newComment, ...comments]);
+      })
       .catch((err) => {
         setError(
           <span className="article-text-smol">

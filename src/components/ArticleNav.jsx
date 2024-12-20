@@ -2,7 +2,7 @@ import { useSearchParams, useLocation, Link } from "react-router";
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 
-const ArticleNav = ({ topics }) => {
+const ArticleNav = ({ topics, setArticles }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   // const [searchQuery, setSearchQuery] = useState(searchParams.get())
@@ -12,8 +12,6 @@ const ArticleNav = ({ topics }) => {
   const orderQuery = searchParams.get("order");
   const limitQuery = searchParams.get("limit");
   const pageQuery = searchParams.get("p");
-
-
 
   const setSortOrder = (direction) => {
     const newParams = new URLSearchParams(searchParams);
@@ -25,12 +23,18 @@ const ArticleNav = ({ topics }) => {
       newParams.set("order", "asc");
       setSearchParams(newParams);
     }
-  }
+  };
 
   <Link to={{ pathname: "/my-route", search: "?myParam=myValue" }}></Link>;
 
   useEffect(() => {
-    getArticles(topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery);
+    getArticles(
+      topicQuery,
+      sortByQuery,
+      orderQuery,
+      limitQuery,
+      pageQuery
+    ).then((response) => setArticles(response));
   }, [topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery]);
 
   const [selectedTopic, setSelectedTopic] = useState([]);
@@ -52,11 +56,7 @@ const ArticleNav = ({ topics }) => {
         }}
       >
         {topics.map((topic, index) => {
-          return (
-            <option key={index}>
-              {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}
-            </option>
-          );
+          return <option key={index}>{topic.slug}</option>;
         })}
       </select>
       <label htmlFor="drop-sort-by">Sort by: </label>
