@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import CommentVotes from "./CommentVotes";
 import CommentDelete from "./CommentDelete";
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, comments, setComments }) => {
   return (
     <>
       <div className="article-card">
@@ -17,7 +17,12 @@ const CommentCard = ({ comment }) => {
         <br />
         <div className="article-text-body">{comment.body}</div>
         <br />
-        <CommentVotes comment={comment} /> <CommentDelete comment={comment} />
+        <CommentVotes comment={comment} />{" "}
+        <CommentDelete
+          comment={comment}
+          comments={comments}
+          setComments={setComments}
+        />
       </div>
     </>
   );

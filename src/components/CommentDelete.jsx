@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { deleteComment } from "../api";
 
-const CommentDelete = ({ comment }) => {
+const CommentDelete = ({ comment, comments, setComments }) => {
   const [user, setUser] = useState("weegembump");
   const [permittedUser, setPermittedUser] = useState(false);
   const [error, setError] = useState(null);
+
+  const commentToDelete = comment.comment_id;
 
   useEffect(() => {
     if (comment.author === user) {
@@ -13,6 +15,10 @@ const CommentDelete = ({ comment }) => {
   }, []);
 
   const handleDelete = () => {
+    const filteredComments = comments.filter(
+      (commentToDelete) => commentToDelete.comment_id !== comment.comment_id
+    );
+    setComments([...filteredComments]);
     deleteComment(comment.comment_id).catch((err) => {
       setError(
         <span className="article-text-smol">
